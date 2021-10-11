@@ -6,14 +6,25 @@ public static T[] GetArray<T>(this IEnumerable<T> list){…}
 для данного урока. Выведите на экран значения элементов массива, который вернул расширяющий
 метод GetArray(). 
 */
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 namespace ConsoleApp14Zad4
 {
+    /// <summary>
+    /// Класс МойЛист, производный от IEnumerable<T>
+    /// </summary>
+    /// <typeparam name="T">Передаваемый параметр T</typeparam>
     class MyList<T> : IEnumerable<T>
     {
         T[] array = new T[0];
+
+        /// <summary>
+        /// Метод поиска длины индекса
+        /// </summary>
+        /// <param name="index">индекс</param>
+        /// <returns></returns>
         public T this[int index]
         {
             get
@@ -21,6 +32,11 @@ namespace ConsoleApp14Zad4
                 return array[index];
             }
         }
+
+        /// <summary>
+        /// Метод добавления элементов
+        /// </summary>
+        /// <param name="item">Элемент</param>
         public void Add(T item)
         {
             T[] NewArray = new T[array.Length + 1];
@@ -28,43 +44,53 @@ namespace ConsoleApp14Zad4
             NewArray[array.Length] = item;
             array = NewArray;
         }
+
+        /// <summary>
+        /// Свойство установка длины массива
+        /// </summary>
         public int Count
         {
             get { return array.Length; }
         }
-        int position = -1;
-        public object Current
-        {
-            get { return array[position]; }
-        }
 
-        public bool MoveNext()
+        /// <summary>
+        /// Метод вывод информации
+        /// </summary>
+        public void Info()
         {
-            if (position < array.Length - 1)
+            Console.WriteLine();
+            foreach (T item in array)
             {
-                position++;
-                return true;
+                Console.Write($"{item} ");
             }
-            else { Reset(); return false; }
         }
-        public void Reset()
+
+        /// <summary>
+        /// Очистка
+        /// </summary>
+        public void Clear()
         {
-            position = -1;
+            array = new T[0];
         }
 
-       
-
+        /// <summary>
+        /// IEnumerator<T> GetEnumerator()
+        /// </summary>
+        /// <returns></returns>
         public IEnumerator<T> GetEnumerator()
         {
             foreach (T item in array)
                 yield return item;
         }
-   
+
+        /// <summary>
+        /// IEnumerator IEnumerable.GetEnumerator()
+        /// </summary>
+        /// <returns></returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
             return array.GetEnumerator();
         }
-
        
     }
-} 
+}

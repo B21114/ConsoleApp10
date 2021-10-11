@@ -5,13 +5,15 @@ VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp10Zad2", "ConsoleApp10\ConsoleApp10Zad2.csproj", "{9B0301D0-CCB9-4128-ABAE-123F15A5A4EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp10Zad3", "ConsoleApp10Zad3\ConsoleApp10Zad3.csproj", "{9066AEDB-F625-42C1-8B82-2E50AEB800DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp10Zad3", "ConsoleApp10Zad3\ConsoleApp10Zad3.csproj", "{9066AEDB-F625-42C1-8B82-2E50AEB800DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp10Zad4", "ConsoleApp10Zad4\ConsoleApp10Zad4.csproj", "{69DB4BC3-75DC-447A-9E13-8D24C33DE82F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp10Zad4", "ConsoleApp10Zad4\ConsoleApp10Zad4.csproj", "{69DB4BC3-75DC-447A-9E13-8D24C33DE82F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp14Zad4", "ConsoleApp14Zad4\ConsoleApp14Zad4.csproj", "{0C0BAF76-26D2-457C-85A1-C6BA5C0CE23A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp14Zad4", "ConsoleApp14Zad4\ConsoleApp14Zad4.csproj", "{0C0BAF76-26D2-457C-85A1-C6BA5C0CE23A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp14Zad2", "ConsoleApp14Zad2\ConsoleApp14Zad2.csproj", "{51B7936D-B2DB-4B53-98A1-F5250480E3B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp14Zad2", "ConsoleApp14Zad2\ConsoleApp14Zad2.csproj", "{51B7936D-B2DB-4B53-98A1-F5250480E3B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp14Zad3", "ConsoleApp14Zad3\ConsoleApp14Zad3.csproj", "{218E1B9D-6253-4265-A2A4-C0CAB997BB5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{51B7936D-B2DB-4B53-98A1-F5250480E3B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51B7936D-B2DB-4B53-98A1-F5250480E3B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51B7936D-B2DB-4B53-98A1-F5250480E3B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{218E1B9D-6253-4265-A2A4-C0CAB997BB5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{218E1B9D-6253-4265-A2A4-C0CAB997BB5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{218E1B9D-6253-4265-A2A4-C0CAB997BB5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{218E1B9D-6253-4265-A2A4-C0CAB997BB5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
