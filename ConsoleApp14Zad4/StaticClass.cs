@@ -10,9 +10,17 @@ using System.Collections.Generic;
 
 namespace ConsoleApp14Zad4
 {
-
+    /// <summary>
+    /// Класс расширение
+    /// </summary>
     public static class StaticClass
     {
+        /// <summary>
+        /// Метод  GetArray
+        /// </summary>
+        /// <typeparam name="T">Входной параметр T</typeparam>
+        /// <param name="list"></param>
+        /// <returns>Возвращает массв</returns>
         public static T[] GetArray<T>(this IEnumerable<T> list)
         {
             int i = 0; T[] array = new T[i];
