@@ -16,12 +16,14 @@ namespace ConsoleApp14Zad4
     {
         static void Main(string[] args)
         {
-            MyList<int> mylist = new MyList<int>();
+            MyList<string,int> mylist = new MyList<string,int>();
             for (int i = 5; i < 20; i++)
             {
-                mylist.Add(i);
+                mylist.Add($"a{i}",i);
             }
             Console.WriteLine(mylist.Count);
+            mylist.Info();
+            mylist.Clear();
             mylist.Info();
         }
     }

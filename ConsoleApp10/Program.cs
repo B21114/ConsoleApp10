@@ -13,7 +13,6 @@ namespace ConsoleApp10
     {
         static void Main(string[] args)
         {
-
             MyList<int> numbers = new MyList<int>();
             numbers.Add(6);
             numbers.Add(5);
@@ -21,8 +20,7 @@ namespace ConsoleApp10
             numbers.Clear();
             numbers.Add(7);
             numbers.Add(1);
-            numbers.ToString();
-            
+            numbers.ToString();         
         }
     }
 }

@@ -13,16 +13,16 @@ namespace ConsoleApp10
     /// Класс MyList параметризированный Т, производный от интерфейса
     /// </summary>
     /// <typeparam name="T">Передаваемый параметр Т</typeparam>
-    public class MyList<T> : IMyList<T> 
-    {                                   
+    public class MyList<T> : IMyList<T>
+    {
         private T[] array;
 
         /// <summary>
         /// Конструктор MyList
         /// </summary>
-        public MyList() 
+        public MyList()
         {
-            array = new T[0]; 
+            array = new T[0];
         }
 
         /// <summary>
@@ -31,10 +31,10 @@ namespace ConsoleApp10
         /// <param name="a">Элемент</param>
         public void Add(T a)
         {
-            T[] tempArray = new T[array.Length + 1]; 
+            T[] tempArray = new T[array.Length + 1];
             for (int i = 0; i < array.Length; i++)
             {
-                tempArray[i] = array[i]; 
+                tempArray[i] = array[i];
             }
             tempArray[array.Length] = a;
             array = tempArray;
@@ -77,7 +77,7 @@ namespace ConsoleApp10
             {
                 if ((int)(object)array[i] == (int)(object)item)
                 {
-                    return true; 
+                    return true;
                 }
             }
             return false;

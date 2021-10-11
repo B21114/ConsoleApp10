@@ -15,8 +15,6 @@ namespace ConsoleApp10Zad3
                 dictionary.Add(1, "ewew");
                 dictionary.Add(2, "edsw");
                 dictionary.ToString();
-
             }
         }
-    
 }
