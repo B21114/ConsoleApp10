@@ -20,45 +20,38 @@ namespace ConsoleApp14Zad4
         /// <summary>
         /// Пустой массив
         /// </summary>
-        T[] array = new T[0];
+        T[] _array = new T[0];
 
         /// <summary>
         /// Метод получения индекса элемента
         /// </summary>
         /// <param name="index">Индекс</param>
         /// <returns></returns>
-        public T this[int index]
-        {
-            get
-            {
-                return array[index];
-            }
-        }
+        public T this[int index] => _array[index];
+
         /// <summary>
         /// Метод добавления элемента
         /// </summary>
         /// <param name="item">Элемент</param>
         public void Add(T item)
         {
-            T[] NewArray = new T[array.Length + 1];
-            array.CopyTo(NewArray, 0);
-            NewArray[array.Length] = item;
-            array = NewArray;
+            T[] NewArray = new T[_array.Length + 1];
+            _array.CopyTo(NewArray, 0);
+            NewArray[_array.Length] = item;
+            _array = NewArray;
         }
 
         /// <summary>
         /// Метод получения длины массива
         /// </summary>
-        public int Count
-        {
-            get { return array.Length; }
-        }
+        public int Count => _array.Length;
+
         /// <summary>
         /// Очистка
         /// </summary>
         public void Clear()
         {
-            array = new T[0];
+            _array = new T[0];
         }
 
         /// <summary>
@@ -67,7 +60,7 @@ namespace ConsoleApp14Zad4
         /// <returns></returns>
         public IEnumerator<T> GetEnumerator()
         {
-            foreach (T item in array)
+            foreach (T item in _array)
                 yield return item;
         }
 
@@ -77,7 +70,7 @@ namespace ConsoleApp14Zad4
         /// <returns></returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return array.GetEnumerator();
+            return _array.GetEnumerator();
         }
 
     }

@@ -5,6 +5,7 @@
 взаимодействия с экземпляром, должен включать метод добавления элемента, индексатор для
 получения значения элемента по указанному индексу и свойство только для чтения для получения
 общего количества элементов.*/
+using System;
 using System.Collections.Generic;
 
 namespace ConsoleApp10
@@ -20,7 +21,7 @@ namespace ConsoleApp10
             numbers.Clear();
             numbers.Add(7);
             numbers.Add(1);
-            numbers.ToString();         
+            Console.WriteLine(numbers);       
         }
     }
 }

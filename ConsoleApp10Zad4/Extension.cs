@@ -20,13 +20,13 @@ namespace ConsoleApp10
         /// <returns></returns>
         public static T[] GetArray<T>(this MyList<T> list)
         {
-            var array = new T[list.Count];
+            var _array = new T[list.Count];
             {
                 for (int j = 0; j < list.Count; j++)
                 {
-                    array[j] = list[j];
+                    _array[j] = list[j];
                 }
-                return array;
+                return _array;
             }
         }
     }

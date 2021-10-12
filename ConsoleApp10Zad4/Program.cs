@@ -19,12 +19,12 @@ namespace ConsoleApp10
             numbers.Add(8);
             numbers.Add(7);
             numbers.Add(1);
-            numbers.ToString();
+            Console.WriteLine(numbers);
 
-            var array = numbers.GetArray();
+            var _array = numbers.GetArray();
             for (int i = 0; i < numbers.Count; i++)
             {
-                Console.WriteLine(array[i]);
+                Console.WriteLine(_array[i]);
             }
         }
     }

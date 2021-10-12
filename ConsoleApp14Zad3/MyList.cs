@@ -1,10 +1,10 @@
 ﻿/*
  Используя Visual Studio, создайте проект по шаблону Console Application.
 Создайте расширяющий метод:
-public static T[] GetArray<T>(this IEnumerable<T> list){…}
+public static T[] Get_array<T>(this IEnumerable<T> list){…}
 Примените расширяющий метод к экземпляру типа MyList<T>, разработанному в домашнем задании 2
 для данного урока. Выведите на экран значения элементов массива, который вернул расширяющий
-метод GetArray(). 
+метод Get_array(). 
 */
 using System;
 using System.Collections;
@@ -19,20 +19,14 @@ namespace ConsoleApp14Zad4
     /// <typeparam name="K">Передаваемый параметр K</typeparam>
     class MyList<T,K> : IEnumerable<T>
     {
-        T[] array = new T[0];
-        K[] array2 = new K[0];
+        T[] _array = new T[0];
+        K[] _array2 = new K[0];
         /// <summary>
         /// Метод поиска длины индекса
         /// </summary>
         /// <param name="index">индекс</param>
         /// <returns></returns>
-        public K this[int index]
-        {
-            get
-            {
-                return array2[index];
-            }
-        }
+        public K this[int index] => _array2[index];
 
         /// <summary>
         /// Метод добавления элементов
@@ -40,23 +34,20 @@ namespace ConsoleApp14Zad4
         /// <param name="item">Элемент</param>
         public void Add(T item, K item2)
         {
-            T[] NewArray = new T[array.Length + 1];
-            array.CopyTo(NewArray, 0);
-            NewArray[array.Length] = item;
-            array = NewArray;
-            K[] NewArray2 = new K[array2.Length + 1];
-            array2.CopyTo(NewArray2, 0);
-            NewArray2[array2.Length] = item2;
-            array = NewArray;
+            T[] _New_array = new T[_array.Length + 1];
+            _array.CopyTo(_New_array, 0);
+            _New_array[_array.Length] = item;
+            _array = _New_array;
+            K[] New_array2 = new K[_array2.Length + 1];
+            _array2.CopyTo(New_array2, 0);
+            New_array2[_array2.Length] = item2;
+            _array = _New_array;
         }
 
         /// <summary>
         /// Свойство установка длины массива
         /// </summary>
-        public int Count
-        {
-            get { return array.Length; }
-        }
+        public int Count => _array.Length;
 
         /// <summary>
         /// Метод вывод информации
@@ -64,19 +55,19 @@ namespace ConsoleApp14Zad4
         public void Info()
         {
             Console.WriteLine();
-            foreach (T item in array)
+            foreach (T item in _array)
             {
-                Console.Write($"{item} ");
+                Console.Write(item);
             }
-            foreach (K item in array2)
+            foreach (K item in _array2)
             {
-                Console.Write($"{item} ");
+                Console.Write(item);
             }
         }
         public void Clear()
         {
-            array = new T[0];
-            array2 = new K[0];
+            _array = new T[0];
+            _array2 = new K[0];
         }
 
         /// <summary>
@@ -85,7 +76,7 @@ namespace ConsoleApp14Zad4
         /// <returns></returns>
         public IEnumerator<T> GetEnumerator()
         {
-            foreach (T item in array)
+            foreach (T item in _array)
                 yield return item;
         }
 
@@ -95,7 +86,7 @@ namespace ConsoleApp14Zad4
         /// <returns></returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return array.GetEnumerator();
+            return _array.GetEnumerator();
         }
        
     }
