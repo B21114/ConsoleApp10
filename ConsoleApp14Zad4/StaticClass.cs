@@ -10,20 +10,29 @@ using System.Collections.Generic;
 
 namespace ConsoleApp14Zad4
 {
-
+    /// <summary>
+    /// Класс расширение
+    /// </summary>
     public static class StaticClass
     {
+        /// <summary>
+        /// Метод  GetArray
+        /// </summary>
+        /// <typeparam name="T">Входной параметр T</typeparam>
+        /// <param name="list"></param>
+        /// <returns>Возвращает массв</returns>
         public static T[] GetArray<T>(this IEnumerable<T> list)
         {
-            int i = 0; T[] array = new T[i];
+            int i = 0;
+            T[] _array = new T[i];
             foreach (T item in list)
             {
-                T[] NewArray = new T[array.Length + 1];
-                array.CopyTo(NewArray, 0);
-                NewArray[array.Length] = item;
-                array = NewArray;
+                T[] _NewArray = new T[_array.Length + 1];
+                _array.CopyTo(_NewArray, 0);
+                _NewArray[_array.Length] = item;
+                _array = _NewArray;
             }
-            return array;
+            return _array;
         }
     }
 } 

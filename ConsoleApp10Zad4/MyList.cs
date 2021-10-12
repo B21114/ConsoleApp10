@@ -15,14 +15,14 @@ namespace ConsoleApp10
     /// <typeparam name="T">Передаваемый параметр Т</typeparam>
     public class MyList<T> : IMyList<T> 
     {                                   
-        private T[] array;
+        private T[] _array;
 
         /// <summary>
         /// Конструктор MyList
         /// </summary>
         public MyList() 
         {
-            array = new T[0]; 
+            _array = new T[0]; 
         }
 
         /// <summary>
@@ -31,13 +31,13 @@ namespace ConsoleApp10
         /// <param name="a">Элемент</param>
         public void Add(T a)
         {
-            T[] tempArray = new T[array.Length + 1]; 
-            for (int i = 0; i < array.Length; i++)
+            T[] _temp_array = new T[_array.Length + 1]; 
+            for (int i = 0; i < _array.Length; i++)
             {
-                tempArray[i] = array[i]; 
+                _temp_array[i] = _array[i]; 
             }
-            tempArray[array.Length] = a;
-            array = tempArray;
+            _temp_array[_array.Length] = a;
+            _array = _temp_array;
         }
 
         /// <summary>
@@ -45,56 +45,33 @@ namespace ConsoleApp10
         /// </summary>
         /// <param name="index">Индекс</param>
         /// <returns></returns>
-        public T this[int index]
-        {
-            get { return array[index]; }
-        }
+        public T this[int index] => _array[index];
 
         /// <summary>
         /// Присвоение свойству размер листа
         /// </summary>
-        public int Count
-        {
-            get { return array.Length; }
-        }
+        public int Count => _array.Length;
 
         /// <summary>
         /// Метод очистки листа
         /// </summary>
         public void Clear()
         {
-            array = new T[0];
+            _array = new T[0];
         }
 
-        /// <summary>
-        /// Для поиска элементов
-        /// </summary>
-        /// <param name="item">Элемент</param>
-        /// <returns></returns>
-        public bool Contains(T item)
-        {
-            for (int i = 0; i < array.Length; i++)
-            {
-                if ((int)(object)array[i] == (int)(object)item)
-                {
-                    return true; 
-                }
-            }
-            return false;
-        }
         /// <summary>
         /// Метод вывода информации
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
-            string stroka = null;
-            for (int i = 0; i < array.Length; i++)
+            string _stroka = string.Empty;
+            for (int i = 0; i < _array.Length; i++)
             {
-                stroka += array[i] + " ";
+                _stroka += _array[i] + " ";
             }
-            Console.WriteLine("Размерность массива " + array.Length + " Элементы массива:" + stroka);
-            return "Размерность массива " + array.Length + " Элементы массива:" + stroka;
+            return "Размерность массива " + _array.Length + " Элементы массива:" + _stroka;
         }
     }
 }

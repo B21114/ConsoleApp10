@@ -5,6 +5,8 @@
 добавления пар элементов, индексатор для получения значения элемента по указанному индексу и
 свойство только для чтения для получения общего количества пар элементов.*/
 
+using System;
+
 namespace ConsoleApp10Zad3
 {
     class Program
@@ -14,9 +16,7 @@ namespace ConsoleApp10Zad3
                 MyDictionary<int, string> dictionary = new MyDictionary<int, string>();
                 dictionary.Add(1, "ewew");
                 dictionary.Add(2, "edsw");
-                dictionary.ToString();
-
+                Console.WriteLine(dictionary);
             }
         }
-    
 }

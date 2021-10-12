@@ -16,16 +16,16 @@ namespace ConsoleApp10Zad3
     /// <typeparam name="TValue"></typeparam>
     class MyDictionary<TKey, TValue> : IMyDictionary<TKey, TValue>
     {
-        private TKey[] keyarray;
-        private TValue[] valuearray;
+        private TKey[] _keyarray;
+        private TValue[] _valuearray;
 
         /// <summary>
         /// Конструктор дневника
         /// </summary>
         public MyDictionary()
         {
-            keyarray = new TKey[0];
-            valuearray = new TValue[0];
+            _keyarray = new TKey[0];
+            _valuearray = new TValue[0];
         }
 
         /// <summary>
@@ -35,21 +35,21 @@ namespace ConsoleApp10Zad3
         /// <param name="b">Значение</param>
         public void Add(TKey a, TValue b)
         {
-            TKey[] tempArray = new TKey[keyarray.Length + 1];
-            for (int i = 0; i < keyarray.Length; i++)
+            TKey[] _tempArray = new TKey[_keyarray.Length + 1];
+            for (int i = 0; i < _keyarray.Length; i++)
             {
-                tempArray[i] = keyarray[i];
+                _tempArray[i] = _keyarray[i];
             }
-            tempArray[keyarray.Length] = a;
-            keyarray = tempArray;
+            _tempArray[_keyarray.Length] = a;
+            _keyarray = _tempArray;
 
-            TValue[] tempvalueArray = new TValue[valuearray.Length + 1];
-            for (int i = 0; i < valuearray.Length; i++)
+            TValue[] _tempvalueArray = new TValue[_valuearray.Length + 1];
+            for (int i = 0; i < _valuearray.Length; i++)
             {
-                tempvalueArray[i] = valuearray[i];
+                _tempvalueArray[i] = _valuearray[i];
             }
-            tempvalueArray[valuearray.Length] = b;
-            valuearray = tempvalueArray;
+            _tempvalueArray[_valuearray.Length] = b;
+            _valuearray = _tempvalueArray;
         }
 
         /// <summary>
@@ -57,64 +57,40 @@ namespace ConsoleApp10Zad3
         /// </summary>
         /// <param name="index">Индекс</param>
         /// <returns></returns>
-        public TKey this[int index]
-        {
-            get { return keyarray[index]; }
-        }
+        public TKey this[int index] => _keyarray[index];
 
         /// <summary>
         /// Присвоение свойству размер листа
         /// </summary>
-        public int Count
-        {
-            get { return keyarray.Length; }
-        }
+        public int Count => _keyarray.Length;
 
         /// <summary>
         /// Метод очистки листа
         /// </summary>
         public void Clear()
         {
-            keyarray = new TKey[0];
-            valuearray = new TValue[0];
+            _keyarray = new TKey[0];
+            _valuearray = new TValue[0];
         }
 
-        /// <summary>
-        /// Для поиска элементов
-        /// </summary>
-        /// <param name="item">Элемент</param>
-        /// <returns></returns>
-        public bool Contains(TKey item)
-        {
-            for (int i = 0; i < keyarray.Length; i++)
-            {
-                if ((int)(object)keyarray[i] == (int)(object)item)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
+ 
         /// <summary>
         /// Метод вывода информации
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
-            string stroka = null;
-            for (int i = 0; i < keyarray.Length; i++)
+            string _stroka = string.Empty;
+            for (int i = 0; i < _keyarray.Length; i++)
             {
-                stroka += keyarray[i] + " ";
-            }
-            Console.WriteLine("Размерность массива " + keyarray.Length + " Ключи элементов массива:" + stroka);
-       
-            string stroka1 = null;
-            for (int i = 0; i < valuearray.Length; i++)
+                _stroka += _keyarray[i] + " ";
+            }         
+            string _stroka1 = string.Empty;
+            for (int i = 0; i < _valuearray.Length; i++)
             {
-                stroka1 += valuearray[i] + " ";
+                _stroka1 += _valuearray[i] + " ";
             }
-            Console.WriteLine("Размерность массива " + valuearray.Length + " Элементы массива:" + stroka1);
-            return "Размерность массива " + keyarray.Length + " Элементы массива:" + stroka1;
+            return "Размерность массива " + _keyarray.Length + " Элементы массива:" + _stroka1;
         }
     }
     
