@@ -38,9 +38,9 @@ namespace ConsoleApp14Zad4
             _array.CopyTo(_New_array, 0);
             _New_array[_array.Length] = item;
             _array = _New_array;
-            K[] New_array2 = new K[_array2.Length + 1];
-            _array2.CopyTo(New_array2, 0);
-            New_array2[_array2.Length] = item2;
+            K[] _New_array2 = new K[_array2.Length + 1];
+            _array2.CopyTo(_New_array2, 0);
+            _New_array2[_array2.Length] = item2;
             _array = _New_array;
         }
 
